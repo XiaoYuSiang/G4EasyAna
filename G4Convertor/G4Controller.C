@@ -41,18 +41,16 @@ void G4Controller()
   system(Form("mkdir -p %s",SaveGraphPath));
   /*Finish adjustable variable */
   
-  // throw;
   /*1. Convert the G4 data to be analysis format: GapT*_MC_nHTH*L*.root*/
-  // G4EventAna(//Convert the G4 data to be GapT*_MC_nHTH*L*.root
-    // VectorInputG4RootFiles,
-    // OuputGapRootFilePathName,
-    // TriggerLessNumberOfHitInEvent, 
-    // TriggerLargeNumberOfHitInEvent,
-    // MaximumEventGapOfTcnt
-  // );
+  G4EventAna(//Convert the G4 data to be GapT*_MC_nHTH*L*.root
+    VectorInputG4RootFiles,
+    OuputGapRootFilePathName,
+    TriggerLessNumberOfHitInEvent, 
+    TriggerLargeNumberOfHitInEvent,
+    MaximumEventGapOfTcnt
+  );
   
   /*2. Use the analysis format file to Draw Graph*/
-  // gROOT->LoadMacro(Form("./BeamEasyStudy.C+"));//load macre(need to use .C+)
   BeamEasyStudy(//Convert the G4 data to be GapT*_MC_nHTH*L*.root
     GapFilePathName.Data(), SaveGraphPathName
   );
